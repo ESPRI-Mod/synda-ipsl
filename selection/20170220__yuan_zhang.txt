@@ -1,0 +1,4 @@
+project=CMIP5
+model=IPSL-CM5A-LR CSIRO-Mk3.6.0 GISS-E2-R
+experiment=historical historicalMisc
+variable[atmos][day]=tas tasmin tasmax rsds rlds pr uas vas prsn huss ps

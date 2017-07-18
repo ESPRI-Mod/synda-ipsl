@@ -1,0 +1,6 @@
+project=PMIP3
+model=HadCM3
+experiment=piControl
+ensemble=r1i1p1
+variable[atmos][mon]=tauv
+

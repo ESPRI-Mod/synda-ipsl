@@ -1,0 +1,5 @@
+project=CMIP5
+model=MPI-ESM-MR HadGEM2-CC MIROC-ESM
+experiment=rcp85
+ensemble=r1i1p1
+variable[atmos][mon]=ua

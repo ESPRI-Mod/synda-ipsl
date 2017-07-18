@@ -1,0 +1,5 @@
+project=CMIP5
+model=CNRM-CM5
+experiment=rcp26 rcp85
+ensemble=all
+variable[atmos][day]=zg ua va psl

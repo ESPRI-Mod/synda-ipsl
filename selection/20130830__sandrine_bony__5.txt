@@ -1,0 +1,4 @@
+project=CMIP5
+experiment=amip amip4K
+ensemble=r1i1p1
+cmor_table=cfMon

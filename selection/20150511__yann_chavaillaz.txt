@@ -1,0 +1,5 @@
+project=CMIP5
+model=GFDL-CM3 GFDL-ESM2G inmcm4 CMCC-CESM HadGEM2-CC MPI-ESM-MR
+experiment=historical rcp26 rcp85
+ensemble=all
+variable[land][mon]=lai landCoverFrac cropFrac grassFrac treeFrac pastureFrac baresoilFrac residualFrac

@@ -1,0 +1,4 @@
+project=CMIP5
+experiment=historicalNat
+ensemble=all
+variable[atmos][mon]=tas

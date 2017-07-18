@@ -1,0 +1,6 @@
+project=CMIP5
+model=GISS-E2-R
+experiment=historical
+ensemble=r6i1p1 r6i1p2 r6i1p3
+variable[atmos][day]=huss pr sfcWind tas tasmax tasmin psl
+variable[atmos][3hr]=rsds rlds rsdsdiff

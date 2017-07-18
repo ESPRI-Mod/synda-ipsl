@@ -1,0 +1,6 @@
+project=CMIP5
+experiment=amip
+variable[atmos][mon]=hur wap ts rsut rsutcs rlutcs rlus rldscs rsus rsdscs rsuscs
+ensemble=r1i1p1
+model=EC-EARTH
+cmor_table=Amon

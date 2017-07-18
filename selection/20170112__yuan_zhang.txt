@@ -1,0 +1,4 @@
+project=CMIP5
+experiment=historicalMisc
+model=CanESM2 CSIRO-Mk3.6.0 FGOALS-g2 GFDL-CM3 GFDL-ESM2M GISS-E2-R CCSM4 CESM1-CAM5
+variable[atmos][day]=tas rsds huss pr rlds uas vas ps prsn co2

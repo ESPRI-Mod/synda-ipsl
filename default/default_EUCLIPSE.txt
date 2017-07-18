@@ -1,0 +1,4 @@
+#local_path_format=treevar
+#local_path_project_format=uc
+local_path_format=custom
+local_path_drs_template=EUCLIPSE/output/%(institute)s/%(model)s/%(experiment)s/%(time_frequency)s/%(realm)s/%(cmor_table)s/%(ensemble)s/%(dataset_version)s

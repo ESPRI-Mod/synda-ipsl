@@ -1,0 +1,4 @@
+project=CMIP5
+ensemble=all
+experiment=rcp26
+variable[atmos][mon]=tas

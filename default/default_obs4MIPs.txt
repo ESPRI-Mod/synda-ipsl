@@ -1,0 +1,4 @@
+#local_path_format=tree
+#local_path_project_format=uc
+local_path_format=customvar
+local_path_drs_template=obs4MIPs/%(product)s/%(realm)s/%(time_frequency)s/%(data_structure)s/%(institute)s/%(source_id)s/%(dataset_version)s

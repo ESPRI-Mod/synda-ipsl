@@ -1,0 +1,5 @@
+project=CMIP5
+experiment=historical rcp26 rcp45 rcp85
+variable[atmos][mon]=tas huss uas vas pr tasmin tasmax ta hus zg clw clt ua va rsds rsus rls rlds rlus hfss hfls tauu tauv
+variable[ocean][mon]=tso sos uo vo ph thetao so 
+variable[atmos][fx]=sftlf

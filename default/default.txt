@@ -1,0 +1,14 @@
+# Default values for all projects
+project=CMIP5
+model=all
+#latest=true
+#replica=false
+distrib=true
+#shards=pcmdi9.llnl.gov:8983/solr,esgf-index1.ceda.ac.uk:8983/solr
+#local_path_project_format=normal
+#local_path_product_format=normal
+local_path_format=tree
+# Exclude aims3.llnl.gov datanode because of wrong DRS regarding product facet
+data_node!=aims3.llnl.gov
+protocol=http
+#protocol=gridftp

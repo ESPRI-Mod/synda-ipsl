@@ -1,0 +1,3 @@
+local_path_format=tree
+#local_path_format=custom
+#local_path_drs_template=input4MIPs/%(institution)s/%(data_type)s/%(target_mip)s/%(time_frequency)s/%(realm)s/%(source)s/%(variable_id)s/%(grid_label)s/%(dataset_version)s

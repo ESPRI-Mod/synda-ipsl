@@ -1,0 +1,6 @@
+project=cmip5rt
+institute=MPI-M
+data_node=esgf3.dkrz.de
+replica=false
+latest=true
+variable[ocean][mon]=hfds

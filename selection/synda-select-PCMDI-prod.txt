@@ -1,0 +1,7 @@
+project=CMIP5
+institute=NIMR-KMA
+experiment=rcp26 rcp45 rcp60 rcp85
+protocol=gridftp
+data_node=aims3.llnl.gov
+latest=true
+replica=false

@@ -1,0 +1,3 @@
+local_path_format=custom
+local_path_drs_template=/prodigfs/prodigfs_test/scratch/%(project)s/%(product)s/%(institute)s/%(model)s/%(experiment)s/%(time_frequency)s/%(realm)s/%(cmor_table)s/%(ensemble)s/%(dataset_version)s/%(variable)s
+protocol=gridftp

@@ -1,0 +1,3 @@
+local_path_format=treevar
+local_path_project_format=uc
+searchapi_host=esg.pik-potsdam.de

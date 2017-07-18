@@ -1,0 +1,5 @@
+project=cmip5rt
+data_node=esgf-data-fedcheck.ceda.ac.uk
+replica=false
+latest=true
+variable[atmos][mon]=tas pr ps 

@@ -1,0 +1,11 @@
+project=cmip5rt
+institute=CSIRO-QCCCE
+experiment=historicalMisc
+model=CSIRO-Mk3-6-0
+time_frequency=6hr
+ensemble=r1i1p1
+realm=atmos
+cmor_table=6hrLev
+data_node=esgftest.nci.org.au
+latest=true
+replica=false

@@ -1,0 +1,3 @@
+project=cmip5rt
+institute=MPI-M
+data_node=esgf3.dkrz.de

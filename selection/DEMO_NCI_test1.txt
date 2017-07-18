@@ -1,0 +1,9 @@
+project=cmip5rt
+institute=CSIRO-BOM
+experiment=historical
+model=ACCESS1-0
+ensemble=r1i1p1
+data_node=esgftest.nci.org.au
+replica=false
+latest=true
+variable[atmos][day]=prsn

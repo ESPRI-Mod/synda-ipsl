@@ -1,0 +1,6 @@
+project=cmip5rt
+institute=NIMR-KMA
+data_node=pcmdi7.llnl.gov
+latest=true
+replica=false
+variable[land][mon]=mrso

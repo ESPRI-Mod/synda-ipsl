@@ -1,0 +1,7 @@
+project=cmip5rt
+institute=IPSL
+model=IPSL-CM5A-MR
+experiment=rcp45
+frequency=day
+ensemble=r1i1p1
+data_node=vesgint-data.ipsl.upmc.fr

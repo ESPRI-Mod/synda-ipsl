@@ -1,0 +1,1 @@
+local_path_project_format=uc

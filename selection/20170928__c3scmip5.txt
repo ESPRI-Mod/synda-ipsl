@@ -1,0 +1,7 @@
+project=c3scmip5
+institute=MOHC
+model=HadGEM2-ES
+experiment=rcp85
+frequency=mon
+data_node=cp4cds-data1.ceda.ac.uk
+searchapi_host=cp4cds-index1.ceda.ac.uk

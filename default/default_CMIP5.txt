@@ -1,5 +1,5 @@
 ensemble=r1i1p1
-product!=output unsolicited
+product!=output
 # Exclude aims3.llnl.gov datanode because of wrong DRS regarding product facet
 data_node!=aims3.llnl.gov
 local_path_project_format=uc

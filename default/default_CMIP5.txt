@@ -1,5 +1,5 @@
 ensemble=r1i1p1
-product!=output unsolicited
+product!=output
 local_path_project_format=uc
 local_path_format=treevar
 #local_path_format=custom

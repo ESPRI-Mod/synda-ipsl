@@ -5,7 +5,6 @@ event_pipeline_mapping = {
     spconst.EVENT_OUTPUT12_VARIABLE_COMPLETE:       ( 'IPSL_VARIABLE',    spconst.PPPRUN_STATUS_WAITING ),
     spconst.EVENT_OUTPUT12_LATEST_DATASET_COMPLETE: ( 'IPSL_DATASET',     spconst.PPPRUN_STATUS_PAUSE   ),
     spconst.EVENT_VARIABLE_COMPLETE:                ( 'IPSL',             spconst.PPPRUN_STATUS_WAITING ),
-    spconst.EVENT_CDS_VARIABLE_COMPLETE:            ( 'CDS',              spconst.PPPRUN_STATUS_WAITING),
     spconst.EVENT_CDF_INT_VARIABLE_N:               ( 'CDF_INT_VARIABLE', spconst.PPPRUN_STATUS_PAUSE   ),
     spconst.EVENT_CDF_INT_DATASET:                  ( 'CDF_INT_DATASET',  spconst.PPPRUN_STATUS_PAUSE   ),
     spconst.EVENT_CDF_INT_VARIABLE_O:               ( 'CDF_INT',          spconst.PPPRUN_STATUS_PAUSE   ),
@@ -13,6 +12,7 @@ event_pipeline_mapping = {
     spconst.EVENT_CDF_COR_DATASET:                  ( 'CDF_COR_DATASET',  spconst.PPPRUN_STATUS_PAUSE   ),
     spconst.EVENT_CDF_COR_VARIABLE_O:               ( 'CDF_COR',          spconst.PPPRUN_STATUS_PAUSE   ),
 }
+#spconst.EVENT_CDS_VARIABLE_COMPLETE:            ( 'CDS',              spconst.PPPRUN_STATUS_WAITING ),
 
 # Maybe IPSL_DATASET may be done while IPSL_VARIABLE is running to trigger CDF_VARIABLE in parallel...
 

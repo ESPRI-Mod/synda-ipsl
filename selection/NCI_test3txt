@@ -1,0 +1,8 @@
+project=CMIP5
+model=CSIRO-Mk3.6.0
+experiment=sstClim
+searchapi_host=esgftest.nci.org.au
+data_node=esgftest.nci.org.au
+protocol=gridftp
+latest=true
+replica=false

@@ -24,7 +24,7 @@ import spconst
 from sppostprocessingutils import PostProcessingPipeline, State, Transition
 
 
-def build_pipeline(name, transitions, state, add_args=False):
+def build_pipeline(name, transitions, state, add_args=True):
     assert transitions[-1] is None
     ppp = PostProcessingPipeline(name)
     initial = True

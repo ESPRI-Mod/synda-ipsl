@@ -10,7 +10,7 @@ def get_pipeline():
 name='republication'
 
 # Transitions/tasks list
-tasks=['migration', 'mapfile','publication']
+tasks=['mapfile', 'publication', None]
 
 #ppp = sppostprocessingutils.build_light_pipeline(name, tasks)
 ppp = build_pipeline(name, tasks)

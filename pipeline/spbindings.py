@@ -2,7 +2,7 @@ import spconst
 
 # Mapping: a 'key' event into the corresponding tuple of 'value' pipeline with starting 'status'
 event_pipeline_mapping = {
-    spconst.EVENT_VARIABLE_COMPLETE: ('republication', spconst.PPPRUN_STATUS_WAITING)
+    spconst.EVENT_CDS_VARIABLE: ('republication', spconst.PPPRUN_STATUS_WAITING)
 }
 
 # Maybe IPSL_DATASET may be done while IPSL_VARIABLE is running to trigger CDF_VARIABLE in parallel...

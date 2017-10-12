@@ -1,4 +1,4 @@
-#!/home/glipsl/anaconda/bin/python
+#!/usr/bin/env python
 # -*- coding: ISO-8859-1 -*-
 
 ##################################
@@ -98,7 +98,7 @@ def _get_args():
         metavar='<logdir>',
         type=str,
         default='/var/log/synda/sdw',
-        help="""Logfile directory""")
+        help="""Logfile directory.\nIf /var/log/synda/sdw doesn't exist /tmp is used.""")
     parser.add_argument(
         '-p',
         metavar='<pipeline>',
@@ -149,6 +149,43 @@ def _get_args():
         version="%(prog)s ({0})".format(VERSION),
         help='Program version')
     return parser.parse_args()
+
+
+def init_logging(log, daemon=False, level='DEBUG'):
+    """
+    Initiates the logging configuration (output, date/message formatting).
+    If a directory is submitted the logfile name is unique and formatted as follows:
+    ``name-YYYYMMDD-HHMMSS-JOBID.log``If ``None`` the standard output is used.
+
+    :param str log: The logfile name or directory.
+    :param str level: The log level.
+
+    """
+    default = '/var/log/synda/sdw'
+    if not os.path.exists(default):
+        default = '/tmp'
+    log_fmt = '%(asctime)s %(levelname)s %(message)s'
+    log_date_fmt = '%Y/%m/%d %I:%M:%S %p'
+    log_levels = {'CRITICAL': logging.CRITICAL,
+                  'ERROR':    logging.ERROR,
+                  'WARNING':  logging.WARNING,
+                  'INFO':     logging.INFO,
+                  'DEBUG':    logging.DEBUG,
+                  'NOTSET':   logging.NOTSET}
+    if daemon:
+        logfile = 'worker.log'
+    else:
+        logfile = 'worker-{0}-{1}.log'.format(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"), os.getpid())
+    if log == 'default':
+        logfile = os.path.join(default, logfile)
+    else:
+        if not os.path.isdir(log):
+            os.makedirs(log)
+        logfile = os.path.join(log, logfile)
+    logging.basicConfig(filename=logfile,
+                        level=log_levels[level],
+                        format=log_fmt,
+                        datefmt=log_date_fmt)
 
 
 def get_status_output(args, **kwargs):
@@ -238,17 +275,17 @@ def run_job(job, args):
         if 'transition_return_code' not in job:
             job['transition_return_code'] = None
     elif script_exists(args.s, job['job_class'], '.sh'):
-     	# Run job as shell script (fork)
+        # Run job as shell script (fork)
         script_input_parameters = []
         for k, v in job['args'].iteritems():
-    	    if v:
-            	assert ' ' not in k
-            	assert ' ' not in v
+            if v:
+                assert ' ' not in k
+                assert ' ' not in v
                 script_input_parameters.append('--{0}'.format(k))
                 script_input_parameters.append(v)
             else:
-    	    	if args.verbose:
-	    	        print 'Skip {0} parameter: {1}'.format(k, v)
+                if args.verbose:
+                    print 'Skip {0} parameter: {1}'.format(k, v)
         # Pass script_dir to shell script
         script_input_parameters.append('--{0}'.format('script-dir'))
         script_input_parameters.append(args.s)
@@ -261,8 +298,8 @@ def run_job(job, args):
                                                      script_input_parameters, shell=False)
         logging.debug('Script return code: {0}'.format(status))
         # Deprecated because all script directly logs messages into worker log during running
-        logging.debug('Script stdout: {0}'.format(stdout))
-        logging.debug('Script stderr: {0}'.format(stderr))
+        logging.debug('Script stdout:\n{0}'.format(stdout))
+        logging.debug('Script stderr:\n{0}'.format(stderr))
 
         if status == 0:
             job['error'] = False
@@ -329,13 +366,6 @@ def process_jobs_with_retry(service, args):
         - Retry forever if an NoMoreJobToProcessException occurs, raise any other errors
     """
     process_jobs(service, args)
-
-
-def init_logger(logfile):
-    logging.basicConfig(filename=logfile,
-                        level=logging.DEBUG,
-                        format='%(asctime)s %(levelname)s %(message)s',
-                        datefmt='%Y/%m/%d %I:%M:%S %p')
 
 
 def run(args):
@@ -429,7 +459,8 @@ def start_daemon(args):
         with context:
             try:
                 # init logging
-                init_logger(logfile)  # must be done after the double fork
+                init_logging(args.l, daemon=True)
+                # must be done after the double fork
                 # start job processing
                 logging.info("Daemon starting ...")
                 # Create database connection service
@@ -477,13 +508,13 @@ def unprivileged_user_mode(mode):
 
 
 # script init.
-VERSION = '{0} {1}-{2}-{3}'.format('v1.0', '2015', '01', '21')
+VERSION = '{0} {1}-{2}-{3}'.format('v2.0', '2017', '03', '01')
 quit = False
 
 tmp_folder = '/tmp'
 default_logdir = '%s/worker_log' % tmp_folder
 pid_file = os.path.join(tmp_folder, 'sp_worker.pid')
-stacktrace_log_file = '/tmp/worker_stacktrace.log'
+stacktrace_log_file = os.path.join(tmp_folder, 'worker_stacktrace.log')
 
 if __name__ == '__main__':
     args = _get_args()
@@ -494,27 +525,23 @@ if __name__ == '__main__':
     # retrieve passwd
     if password is None:
         password = getpass.getpass()
+    # retrieve script full path
+    args.s = os.path.realpath(args.s)
     if args.action is None:
         # non-daemon mode
         signal.signal(signal.SIGTERM, stop)
-        # build log path
-        logdir = default_logdir if args.l is None else args.l
-        logfile = get_logfile(logdir, get_unique_filename())
         # run as unprivileged user (if run as root and unprivileged user is set)
         if is_root():
             if user and group:
                 unprivileged_user_mode('interactive')
         # init logging
-        init_logger(logfile)
+        init_logging(args.l)
         run(args)
     else:
         # daemon mode
         pidfile = daemon.pidfile.PIDLockFile(pid_file)
-        context = daemon.DaemonContext(working_directory=tmp_folder, pidfile=pidfile, )
+        context = daemon.DaemonContext(working_directory=tmp_folder, pidfile=pidfile)
         context.signal_map = {signal.SIGTERM: stop, }
-        # build log path
-        logdir = get_log_dir(args)
-        logfile = get_logfile(logdir, 'worker.log')
         if args.action == 'start':
             start_daemon(args)
         elif args.action == 'stop':

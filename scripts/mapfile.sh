@@ -39,6 +39,10 @@ msg "INFO" "mapfile.sh started"
 msg "INFO" "Input:  ${input_dir}"
 msg "INFO" "Output: ${output_dir}"
 
+if [ ${project} == "CMIP5" ] || [ ${project} == "CORDEX" ]; then
+    project=$(echo ${project}-pp)
+fi
+
 esgprep mapfile -i ${scripts_path}/config/publication/. -v \
                 --project ${project,,} \
                 --outdir ${output_dir} \

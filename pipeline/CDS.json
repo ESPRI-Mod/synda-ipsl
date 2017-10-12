@@ -1,0 +1,70 @@
+{
+  "mapfile": {
+    "S1000": {
+      "c3scmip5": {
+        "input-dir": {
+          "root": ["esgf/mirror", "before", "project"]
+        },
+        "output-dir": {
+          "root": ["esgf/mapfiles", "before", "project"],
+          "product": "vesg4cds-data",
+          "time_frequency": "remove",
+          "realm": "remove",
+          "cmor_table": "remove",
+          "ensemble": "remove",
+          "variable":"remove",
+          "version": "remove"
+        }
+      },
+      "c3scordex": {
+        "input-dir": {
+          "root": ["esgf/mirror", "before", "project"]
+        },
+        "output-dir": {
+          "root": ["esgf/mapfiles", "before", "project"],
+          "product": "vesg4cds-data",
+          "ensemble": "remove",
+          "rcm_model": "remove",
+          "rcm_version": "remove",
+          "time_frequency": "remove",
+          "variable": "remove",
+          "version": "remove"
+        }
+      }
+    }
+  },
+  "publication": {
+    "S1100": {
+      "c3scmip5": {
+        "input-dir": {
+          "root": ["esgf/mirror", "before", "project"]
+        },
+        "output-dir": {
+          "root": ["esgf/mapfiles", "before", "project"],
+          "product": "vesg4cds-data",
+          "time_frequency": "remove",
+          "realm": "remove",
+          "cmor_table": "remove",
+          "ensemble": "remove",
+          "variable":"remove",
+          "version": "remove"
+        }
+      },
+      "c3scordex": {
+        "input-dir": {
+          "root": ["esgf/mirror", "before", "project"]
+        },
+        "output-dir": {
+          "root": ["esgf/mapfiles", "before", "project"],
+          "product": "vesg4cds-data",
+          "ensemble": "remove",
+          "rcm_model": "remove",
+          "rcm_version": "remove",
+          "time_frequency": "remove",
+          "variable": "remove",
+          "version": "remove"
+        }
+      }
+    }
+  }
+}

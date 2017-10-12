@@ -25,5 +25,32 @@
     "time_frequency",
     "variable",
     "version"
+  ],
+  "c3scmip5": [
+    "project",
+    "product",
+    "institute",
+    "model",
+    "experiment",
+    "time_frequency",
+    "realm",
+    "cmor_table",
+    "ensemble",
+    "variable",
+    "version"
+  ],
+  "c3scordex": [
+    "project",
+    "product",
+    "domain",
+    "institute",
+    "driving_model",
+    "experiment",
+    "ensemble",
+    "rcm_model",
+    "rcm_version",
+    "time_frequency",
+    "variable",
+    "version"
   ]
 }

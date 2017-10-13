@@ -30,4 +30,4 @@ def get_pipeline():
     # Pipeline initial state
     state = 900
 
-    return build_pipeline(name, transitions, state, add_args=False)
+    return build_pipeline(name, transitions, state)

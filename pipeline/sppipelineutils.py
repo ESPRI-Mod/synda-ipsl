@@ -74,7 +74,7 @@ def decode_dataset_pattern(kw):
         from_keys.remove('variable')
     assert len(from_keys) == len(from_values)
     from_facets = dict(zip(from_keys, from_values))
-    assert kw.project == from_facets['project']
+    assert kw.project == from_facets['project'].lower()
     return from_keys, from_values, from_facets
 
 

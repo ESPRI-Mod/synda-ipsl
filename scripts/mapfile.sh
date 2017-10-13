@@ -47,7 +47,6 @@ esgprep mapfile -i ${scripts_path}/config/publication/. -v \
                 --project ${project,,} \
                 --outdir ${output_dir} \
                 --no-version \
-                --log ${LOGFILE} \
                 --max-threads 16 \
                 --no-cleanup \
                 ${input_dir}

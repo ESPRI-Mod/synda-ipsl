@@ -53,7 +53,7 @@
       }
     }
   },
-  "overlap": {
+  "time_axis_normalization": {
     "S0400": {
       "CMIP5": {
         "input-dir": {
@@ -70,7 +70,7 @@
       }
     }
   },
-  "time_axis_normalization": {
+  "overlap": {
     "S0500": {
       "CMIP5": {
         "input-dir": {

@@ -43,12 +43,25 @@ if [ ${project} == "CMIP5" ] || [ ${project} == "CORDEX" ]; then
     project=$(echo ${project}-pp)
 fi
 
-esgprep mapfile -i ${scripts_path}/config/publication/. -v \
-                --project ${project,,} \
-                --outdir ${output_dir} \
-                --no-version \
-                --max-threads 16 \
-                --no-cleanup \
-                ${input_dir}
+if [ ${project} == "c3scmip5" ] || [ ${project} == "c3scordex" ]; then
+
+    esgprep mapfile -i ${scripts_path}/config/publication/. -v \
+                    --project ${project,,} \
+                    --outdir ${output_dir} \
+                    --max-threads 16 \
+                    --no-cleanup \
+                    ${input_dir}
+
+else
+
+    esgprep mapfile -i ${scripts_path}/config/publication/. -v \
+                    --project ${project,,} \
+                    --outdir ${output_dir} \
+                    --no-version \
+                    --max-threads 16 \
+                    --no-cleanup \
+                    ${input_dir}
+
+fi
 
 msg "INFO" "mapfile.sh complete"

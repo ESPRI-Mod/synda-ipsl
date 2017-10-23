@@ -25,8 +25,8 @@ def get_pipeline():
     # End "None" transition is mandatory
     transitions = ['suppression_variable',
                    'coalesce',
-                   'overlap',
                    'time_axis_normalization',
+                   'overlap',
                    'suppression_variable',
                    'copy',
                    'cdscan',

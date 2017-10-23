@@ -161,7 +161,7 @@
         },
         "output-dir": {
           "root": ["esgf/mapfiles", "before", "project"],
-          "product": "esgf-local",
+          "product": "vesg-local",
           "time_frequency": "remove",
           "realm": "remove",
           "cmor_table": "remove",
@@ -177,7 +177,7 @@
         },
         "output-dir": {
           "root": ["esgf/mapfiles", "before", "project"],
-          "product": "esgf-local",
+          "product": "vesg-local",
           "ensemble": "remove",
           "rcm_model": "remove",
           "rcm_version": "remove",
@@ -198,7 +198,7 @@
         },
         "output-dir": {
           "root": ["esgf/mapfiles", "before", "project"],
-          "product": "esgf-local",
+          "product": "vesg-local",
           "time_frequency": "remove",
           "realm": "remove",
           "cmor_table": "remove",
@@ -214,7 +214,7 @@
         },
         "output-dir": {
           "root": ["esgf/mapfiles", "before", "project"],
-          "product": "esgf-local",
+          "product": "vesg-local",
           "ensemble": "remove",
           "rcm_model": "remove",
           "rcm_version": "remove",
